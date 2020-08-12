@@ -1,0 +1,267 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;!important;
+    scroll-behavior: smooth;
+}
+#definition a{
+    text-decoration: none;
+}
+
+.centered {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* definition section*/
+#definition{
+    background-image: url("../img/test1.jpg");
+    background-size: cover;
+    background-position: top center;
+    position: relative;
+    z-index: 1;
+
+}
+#definition::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: .4;
+    z-index: -1;
+}
+
+.definition{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 50px;
+    justify-content: flex-start;
+}
+
+#definition h1 {
+    display: block;
+    width: fit-content;
+    font-size: 4rem;
+    position: relative;
+    color: transparent;
+    animation: text_reveal .5s ease forwards;
+    animation-delay: 1s;
+}
+
+#definition h1:nth-child(1) {
+    animation-delay: 1s;
+}
+#definition h1:nth-child(2) {
+    animation-delay: 1s;
+}
+
+#definition h1 span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    background-color: #002855;
+    animation: text_reveal_box 1s ease;
+    animation-delay: .5s;
+}
+#definition h1:nth-child(1) span {
+    animation-delay: .5s;
+}
+#definition h1:nth-child(2) span {
+    animation-delay: .5s;
+}
+
+
+.cta{
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px 30px;
+    color: white;
+    background-color: transparent;
+    border: 2px solid white;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    margin-top: 30px;
+    transition: .3s ease;
+    transition-property: background-color, color;
+}
+
+.cta:hover {
+    color: #002855;
+    background-color: white;
+}
+
+#definition p {
+    color: white;}
+.centered p{
+    font-size: 1.4rem;
+    margin-top: 5px;
+    line-height: 2.5rem;
+    font-weight: 300;
+    letter-spacing: .05rem;
+    max-width: 700px;
+}
+/* end of definition section*/
+
+
+/*events section*/
+.events {
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+    padding: 100px 0;
+    background: rgba(117,120,123,.05);
+}
+.events-top {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.container{
+    margin-top: 25px;
+}
+.carousel-inner img{
+
+    width: 100%;
+}
+/*end of events section*/
+
+
+/*blog section*/
+
+.section-title {
+    font-size: 4rem;
+    font-weight: 300;
+    color: black;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+}
+
+
+.blog{
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+    padding: 100px 0;
+    background: hsl(0, 0%, 98%);
+    overflow-y: hidden;
+}
+.card a:hover{
+    text-decoration: none;
+}
+
+
+.card-body{
+    background: rgba(0,0,0,.03);
+
+}
+
+.card{
+    border: none !important;
+}
+
+.card:hover {
+    transform: translateY(-.5%);
+    box-shadow: 0 4rem 8rem rgba(0, 0, 0, .2);
+}
+
+.card-footer{
+    background: none!important;
+}
+.card-title{
+    color: #00629B;
+    transition: all 0.5s ease;
+}
+.card-title:hover{
+    color: #002855;
+}
+
+
+.column{
+    margin-bottom: 8%;
+    padding-right: 25px!important;
+    margin-top: 50px;
+}
+
+.inner{
+    overflow: hidden;
+}
+
+.inner img{
+    transition: all 1.5s ease ;
+}
+
+.inner:hover img{
+    transform: scale(1.5);
+}
+
+.tags{
+    margin-left:10px;
+    padding: 5px;
+    background:rgba(117,120,123,.1) ;
+    color: #002855;
+    border-radius: 0.3rem;
+}
+
+/* end of blog section*/
+
+
+@keyframes text_reveal_box {
+    50% {
+        width: 100%;
+        left: 0;
+    }
+    100% {
+        width: 0;
+        left: 100%;
+    }
+}
+@keyframes text_reveal {
+    100% {
+        color: white;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    #blog .blog-bottom .blog-item {
+        flex-basis: 20%;
+        margin: 2%;
+    }
+}
+
+.slider{
+    position: relative;
+    max-height: 80vh;
+}
+.carousel_arrow{
+    position: absolute;
+    text-align: center;
+    line-height: 50px;
+    display: inline-block;
+    cursor: pointer;
+    bottom:50%;
+}
+.prev_arrow{
+ left: -5%;
+}
+.next_arrow{
+    right: -5%;
+}
